@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GRAND CHARIOT</title>
+    <title>DIAMOND STAR</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,11 +15,11 @@
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
-            <%= link_to "GRAND CHARIOT", root_path,class: :nav_font %>
+            <%= link_to "DIAMOND STAR", root_path,class: :nav_font %>
           </div>
           <%if user_signed_in? %>
             <div class="nav__right">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
               <%= link_to "新規投稿", root_path, class: :nav__btn %>
           <% else %>
             <div class="nav__right">
@@ -32,7 +32,7 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © GRAND CHARIOT 2022.</p>
+      <p class="copyright">Copyright © DIAMOND STAR 2022.</p>
     </footer>
   </body>
 </html>
