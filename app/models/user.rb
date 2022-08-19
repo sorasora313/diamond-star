@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
          validates :name, presence: true,uniqueness: true
          validates :profile, presence: true
+         validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i}
 end

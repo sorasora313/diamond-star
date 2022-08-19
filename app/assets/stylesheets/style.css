@@ -120,7 +120,9 @@ a {
   margin-bottom: 20px;
 }
 .greeting__link{
-  text-decoration: underline;
+  background-color: mediumpurple;
+  border: 1px white solid;
+  border-radius: 3px;
 }
 .page-heading {
   font-size: 30px;
