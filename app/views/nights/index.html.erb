@@ -1,0 +1,14 @@
+<main class="main">
+  <div class="inner">
+     <% if user_signed_in? %>
+      <div class="greeting">
+
+        <%= link_to "#{current_user.name}がログイン中",root_path, class: :greeting__link%>
+      </div>
+    <% end %>
+    <div class="card__wrapper">
+
+    </div>
+  </div>
+</main>
+
