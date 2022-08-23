@@ -37,6 +37,11 @@ class NightsController < ApplicationController
       render :edit
     end
   end
+  def destroy
+    night = Night.find(params[:id])
+    night.destroy
+    redirect_to root_path
+  end
   
  
 
