@@ -21,6 +21,8 @@ class NightsController < ApplicationController
 
   def show
     @night = Night.find(params[:id])
+    @comment = Comment.new
+    @comments = @night.comments.includes(:user)
   end
 
   def edit
