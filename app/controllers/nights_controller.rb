@@ -23,6 +23,23 @@ class NightsController < ApplicationController
     @night = Night.find(params[:id])
   end
 
+  def edit
+    @night = Night.find(params[:id])
+
+  end
+
+  def update
+    @night = Night.find(params[:id])
+    @night.update(night_params)
+    if @night.save
+      redirect_to night_path
+    else
+      render :edit
+    end
+  end
+  
+ 
+
   private
   def night_params
     params.require(:night).permit(:image, :title, :explain, :genre_id,:state_id).merge(user_id: current_user.id)
