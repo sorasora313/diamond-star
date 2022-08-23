@@ -1,0 +1,61 @@
+<main class="main">
+  <div class="inner">
+    <div class="night__wrapper">
+      <p class="night__hedding">
+        <%= @night.title%>
+      </p>
+      <%= link_to "#{@night.user.name}の投稿", root_path, class: :night__user %>
+      <%if user_signed_in? && current_user.id == @night.user_id%>
+        <div class="night__manage">
+          <%= link_to "編集する", root_path, class: :night__btn %>
+          <%= link_to "削除する", root_path, class: :night__btn %>
+        </div>
+      <% end %>
+      <div class="night__image">
+        <%= image_tag @night.image %>
+      </div>
+      <div class="night__body">
+        <div class="night__detail">
+          <p class="detail__title">ジャンル</p>
+          <p class="detail__message">
+            <%= @night.genre.name %>
+          </p>
+
+        <div class="night__detail">
+          <p class="detail__title">地域</p>
+          <p class="detail__message">
+            <%= @night.state.name %>
+          </p>
+
+        </div>
+        <div class="night__detail">
+          <p class="detail__title">説明</p>
+          <p class="detail__message">
+            <%= @night.explain %>
+          </p>
+        </div>
+      </div>
+      <div class="night__comments">
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+          <%# <%= form_with model: モデル名,local: true do |f|%>
+            <div class="field">
+              <%# <%= f.label :hoge, "コメント" %><br />
+              <%# <%= f.text_field :hoge, id:"comment_content" %>
+            </div>
+            <div class="actions">
+              <%# <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <%# <% end %>
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+            <li class="comments_list">
+              <%# <%= " コメントのテキスト "%>
+              <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
+            </li>
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
