@@ -154,8 +154,10 @@ a {
 .card__user {
   display: block;
   font-size: 12px;
-  color: #ffff;
-  text-align: right;
+  background-color: mediumpurple;
+  border: 1px white solid;
+  border-radius: 3px;
+  text-align: center;
   text-decoration: underline;
 }
 
