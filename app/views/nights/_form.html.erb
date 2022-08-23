@@ -12,11 +12,11 @@
 
   <div class="field">
     <%= f.label :state, "地域" %><br />
-    <%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form__text", id:"night_state"}) %>
+    <%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form_select", id:"night_state"}) %>
   </div>
   <div class="field">
     <%= f.label :genre, "ジャンル" %><br />
-   <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"form__text", id:"night_genre"}) %>
+   <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"form__select", id:"night_genre"}) %>
   </div>
 
   <div class="field">
