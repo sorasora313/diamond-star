@@ -4,6 +4,7 @@ class Night < ApplicationRecord
   has_one_attached :image
   belongs_to :genre
   belongs_to :state
+  has_many :comments, dependent: :destroy
 
   validates :title,presence: true 
   validates :explain,presence: true
