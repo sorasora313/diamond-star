@@ -4,7 +4,7 @@
       <p class="night__hedding">
         <%= @night.title%>
       </p>
-      <%= link_to "#{@night.user.name}の投稿", root_path, class: :night__user %>
+      <%= link_to "#{@night.user.name}の投稿", user_path(@night.user), class: :night__user %>
       <%if user_signed_in? && current_user.id == @night.user_id%>
         <div class="night__manage">
           <%= link_to "編集する", edit_night_path(@night.id), class: :night__btn %>
@@ -52,7 +52,7 @@
           <% @comments.each do |comment| %>
             <li class="comments_list">
                <%= comment.content%>
-              <%= link_to "（#{comment.user.name}）", root_path, class: :comment_user %>
+              <%= link_to "（#{comment.user.name}）", user_path(@night.user), class: :comment_user %>
             <% end %>
             </li>
         </ul>
