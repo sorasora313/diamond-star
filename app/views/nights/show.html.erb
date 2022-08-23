@@ -7,7 +7,7 @@
       <%= link_to "#{@night.user.name}の投稿", root_path, class: :night__user %>
       <%if user_signed_in? && current_user.id == @night.user_id%>
         <div class="night__manage">
-          <%= link_to "編集する", root_path, class: :night__btn %>
+          <%= link_to "編集する", edit_night_path(@night.id), class: :night__btn %>
           <%= link_to "削除する", root_path, class: :night__btn %>
         </div>
       <% end %>
