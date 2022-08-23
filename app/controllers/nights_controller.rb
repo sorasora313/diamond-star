@@ -1,7 +1,7 @@
 class NightsController < ApplicationController
 
   def index
-    @night = Night.order("created_at DESC")
+    @night = Night.all.order("created_at DESC")
   end
 
   def new
@@ -17,6 +17,10 @@ class NightsController < ApplicationController
       render :new
       @night = Night.includes(:user)
     end
+  end
+
+  def show
+    @night = Night.find(params[:id])
   end
 
   private
