@@ -8,7 +8,7 @@
       <%if user_signed_in? && current_user.id == @night.user_id%>
         <div class="night__manage">
           <%= link_to "編集する", edit_night_path(@night.id), class: :night__btn %>
-          <%= link_to "削除する", root_path, class: :night__btn %>
+          <%= link_to "削除する", night_path(@night.id), method: :delete, class: :night__btn %>
         </div>
       <% end %>
       <div class="night__image">
