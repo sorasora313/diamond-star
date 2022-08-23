@@ -147,6 +147,10 @@ a {
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
+  text-align: center;
+  background-color: #000066;
+  
+
 }
 .card__summary {
   font-size: 16px;

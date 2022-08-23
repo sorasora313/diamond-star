@@ -1,11 +1,11 @@
 <div class="card">
-
+ <%= link_to  night.title, night_path(night.id),method: :get, class: :card__title%>
 <%= link_to night_path(night.id),method: :get do %>
  <%= image_tag night.image, class: :card__img if night.image.attached? %>
  <% end %>
   
 <div class="card__body">
-    <%= link_to  night.title, night_path(night.id),method: :get, class: :card__title%>
+   
      
     <p class="card__summary">
       <%= "ジャンル: #{night.genre.name}" %>
