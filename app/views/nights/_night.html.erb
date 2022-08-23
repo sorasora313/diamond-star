@@ -1,0 +1,16 @@
+<div class="card">
+
+<%= link_to image_tag(night.image, class: :card__img ), root_path %>
+ 
+  
+<div class="card__body">
+    <%= link_to  night.title, root_path,method: :get, class: :card__title%>
+     
+    <p class="card__summary">
+      <%= "ジャンル: #{night.genre.name}" %>
+     <br> <%= "地域: #{night.state.name}" %>
+     <br><%= "説明: #{night.explain}"%>
+    </p>
+      <%= link_to  "#{night.user.name}の投稿", root_path,class: :card__user %>
+  </div>
+</div>

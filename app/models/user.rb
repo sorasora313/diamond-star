@@ -7,4 +7,5 @@ class User < ApplicationRecord
          validates :name, presence: true,uniqueness: { case_sensitive: true }
          validates :profile, presence: true
          validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i}
+         has_many :night
 end
