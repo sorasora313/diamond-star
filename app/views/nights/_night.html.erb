@@ -7,8 +7,9 @@
     <%= link_to  night.title, root_path,method: :get, class: :card__title%>
      
     <p class="card__summary">
-      <%= night.genre.name %>
-      <%= night.state.name %>
+      <%= "ジャンル: #{night.genre.name}" %>
+     <br> <%= "地域: #{night.state.name}" %>
+     <br><%= "説明: #{night.explain}"%>
     </p>
       <%= link_to  "#{night.user.name}の投稿", root_path,class: :card__user %>
   </div>
