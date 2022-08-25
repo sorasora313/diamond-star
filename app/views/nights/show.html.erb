@@ -4,7 +4,7 @@
       <p class="night__hedding">
         <%= @night.title%>
       </p>
-      <%= link_to "#{@night.user.name}の投稿", user_path(@night.user), class: :night__user %>
+     
       <%if user_signed_in? && current_user.id == @night.user_id%>
         <div class="night__manage">
           <%= link_to "編集する", edit_night_path(@night.id), class: :night__btn %>
@@ -15,32 +15,49 @@
         <%= image_tag @night.image %>
       </div>
       <div class="night__body">
-        <div class="night__detail">
-          <p class="detail__title">ジャンル</p>
-          <p class="detail__message">
-            <%= @night.genre.name %>
-          </p>
+        <table class="night__detail">
+        <tr>
+            <th class="table__col1">投稿者</th>
+            <td class="table__col2"><%= @night.user.name %></td>
+          </tr>
 
-        <div class="night__detail">
-          <p class="detail__title">地域</p>
-          <p class="detail__message">
-            <%= @night.state.name %>
-          </p>
+        <tr>
+            <th class="table__col1">ジャンル</th>
+            <td class="table__col2"><%= @night.genre.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">地域</th>
+            <td class="table__col2"><%= @night.state.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">説明</th>
+            <td class="table__col2"><%= @night.explain %></td>
+          </tr>
+          
+        </table>
+       
 
-        </div>
-        <div class="night__detail">
-          <p class="detail__title">説明</p>
-          <p class="detail__message">
-            <%= @night.explain %>
-          </p>
-        </div>
       </div>
 
-      <div class = "heart">
-      <div>
+      
       
       <div class="night__comments">
         <% if current_user %>
+
+        <div clss = "heart">
+        <% if @night.liked_by?(current_user) %>
+          <%= link_to  night_likes_path(@night), method: :delete do %>
+            💓
+            <%= @night.likes.count %>
+          <% end %>
+          <% else %>
+          <%= link_to night_likes_path(@night), method: :post do %>
+             🖤
+            <%= @night.likes.count %>
+          <% end %>
+
+          <% end %>
+        </div>
           <%= form_with model: [@night, Comment.new],local: true do |f|%>
             <div class="field">
               <%= f.label :content, "コメント" %><br />

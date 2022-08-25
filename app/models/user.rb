@@ -9,4 +9,5 @@ class User < ApplicationRecord
          validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i}
          has_many :night
          has_many :commnets, dependent: :destroy
+         has_many :likes, dependent: :destroy
 end
