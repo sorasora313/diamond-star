@@ -10,8 +10,9 @@
     <p class="card__summary">
       <%= "ジャンル: #{night.genre.name}" %>
      <br> <%= "地域: #{night.state.name}" %>
-     <br><%= "説明: #{night.explain}"%>
+    
     </p>
+    
       <%= link_to  "#{night.user.name}の投稿", root_path,class: :card__user %>
   </div>
 </div>
