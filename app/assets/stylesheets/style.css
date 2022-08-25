@@ -301,6 +301,21 @@ a {
   color: #fff;
   font-size: 10px;
 }
+.like-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: #808080; 
+  margin-left: 20px;
+  }
+ 
+ .unlike-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: #e54747;
+  margin-left: 20px;
+  }
 
 /* タブレット対応 */
 @media (max-width: 1024px) {

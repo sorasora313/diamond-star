@@ -5,6 +5,12 @@ class Night < ApplicationRecord
   belongs_to :genre
   belongs_to :state
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+
+  def liked_by?(user)
+      likes.exists?(user_id: user.id)
+  end
+
 
   validates :title,presence: true 
   validates :explain,presence: true

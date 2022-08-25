@@ -43,6 +43,21 @@
       
       <div class="night__comments">
         <% if current_user %>
+
+        <div clss = "heart">
+        <% if @night.liked_by?(current_user) %>
+          <%= link_to  night_likes_path(@night), method: :delete do %>
+            💓
+            <%= @night.likes.count %>
+          <% end %>
+          <% else %>
+          <%= link_to night_likes_path(@night), method: :post do %>
+             🖤
+            <%= @night.likes.count %>
+          <% end %>
+
+          <% end %>
+        </div>
           <%= form_with model: [@night, Comment.new],local: true do |f|%>
             <div class="field">
               <%= f.label :content, "コメント" %><br />
