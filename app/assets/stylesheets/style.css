@@ -220,11 +220,53 @@ a {
   color: #fff;
   background: #999;
 }
+.user__wrapper{
+  min-height: calc(100vh - 161px);
+  text-align: center;
+}
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 50%;
+}
+.table__col1{
+  width: 50px;
+  background-color: gray;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+.table__col2{
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}
+.table__col3{
+  width: 50px;
+  background-color: gray;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+  height: 100px;
+}
+.table__col4{
+  height: 100px;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}
 
+.heart{
+ text-align: center;
+}
 .night__comments{
   background-color: black;
   padding: 20px;
   margin: 28px 0 40px 0;
+ 
+  
 }
 
 .comments_lists{
@@ -242,29 +284,6 @@ a {
   text-decoration: underline;
 }
 
-/* ユーザーページ */
-.user__wrapper{
-  min-height: calc(100vh - 161px);
-  text-align: center;
-}
-.table{
-  border-collapse: collapse;
-  margin-bottom: 32px;
-  width: 50%;
-}
-.table__col1{
-  width: 20%;
-  background-color: gray;
-  border: 1px solid #dedede;
-  font-size: 14px;
-  text-align: center;
-}
-.table__col2{
-  width: 80%;
-  padding: 20px;
-  border: 1px solid #dedede;
-  font-size: 14px;
-}
 
 .user__card {
   display: flex;
@@ -316,6 +335,7 @@ a {
   .night_image{
     width: 60%;
   }
+ 
 }
 
  /* スマホ表示 */

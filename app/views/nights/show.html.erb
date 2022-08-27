@@ -13,51 +13,57 @@
       <% end %>
       <div class="night__image">
         <%= image_tag @night.image %>
+         <div class = "heart">
+
+        <% if @night.liked_by?(current_user) %>
+          <%= link_to  night_likes_path(@night), method: :delete do %>
+            💓
+            <%=  "#{@night.likes.count}いいね"%>
+          
+          <% end %>
+          <% else %>
+          <%= link_to night_likes_path(@night), method: :post do %>
+             🖤
+            <%= "#{@night.likes.count}いいね" %>
+          <% end %>
+
+          <% end %>
+        </div>
       </div>
       <div class="night__body">
+
+     
+
         <table class="night__detail">
         <tr>
             <th class="table__col1">投稿者</th>
             <td class="table__col2"><%= @night.user.name %></td>
+         
           </tr>
 
         <tr>
             <th class="table__col1">ジャンル</th>
             <td class="table__col2"><%= @night.genre.name %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">地域</th>
+            </tr>
+            <tr>
+             <th class="table__col1">地域</th>
             <td class="table__col2"><%= @night.state.name %></td>
           </tr>
+         
           <tr>
-            <th class="table__col1">説明</th>
-            <td class="table__col2"><%= @night.explain %></td>
+            <th class="table__col3">説明</th>
+            <td class="table__col4"><%= @night.explain %></td>
           </tr>
           
         </table>
        
-
+       
       </div>
 
       
-      
       <div class="night__comments">
-        <% if current_user %>
-
-        <div clss = "heart">
-        <% if @night.liked_by?(current_user) %>
-          <%= link_to  night_likes_path(@night), method: :delete do %>
-            💓
-            <%= @night.likes.count %>
-          <% end %>
-          <% else %>
-          <%= link_to night_likes_path(@night), method: :post do %>
-             🖤
-            <%= @night.likes.count %>
-          <% end %>
-
-          <% end %>
-        </div>
+        <% if user_signed_in? %>
+        
           <%= form_with model: [@night, Comment.new],local: true do |f|%>
             <div class="field">
               <%= f.label :content, "コメント" %><br />
@@ -73,10 +79,11 @@
           <% @comments.each do |comment| %>
             <li class="comments_list">
                <%= comment.content%>
-              <%= link_to "（#{comment.user.name}）", user_path(@night.user), class: :comment_user %>
+              <%= link_to "（#{comment.user.name}）", user_path(comment.user), class: :comment_user %>
             <% end %>
             </li>
         </ul>
+        
       </div>
     </div>
   </div>
