@@ -67,8 +67,9 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
 }
-.nav__btn:hover,.greeting__link:hover{
+.nav__btn:hover,.greeting__link:hover,.form__btn:hover{
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .greeting__link{
@@ -92,6 +93,8 @@ a {
 
 .field{
   margin: 10px 0;
+  
+
 }
 
 .actions{
@@ -105,17 +108,14 @@ a {
   color: #fff;
   text-decoration: none;
   user-select: none;
-  background: #87CEFA;
+  background: #000066;
   border: 1px #87CEFA solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
 }
 
-.form__btn:hover {
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-}
+ 
 
 /* メイン */
 
@@ -161,7 +161,7 @@ a {
 }
 .card__user {
   display: block;
-  color: purple;
+  color: skyblue;
   font-size: 12px;
   text-align: right;
   text-decoration: underline;
@@ -230,7 +230,7 @@ a {
   width: 50%;
 }
 .table__col1{
-  width: 50px;
+  width: 60px;
   background-color: gray;
   border: 1px solid #dedede;
   font-size: 14px;
@@ -260,13 +260,12 @@ a {
 
 .heart{
  text-align: center;
+ padding: 30px 0 0 0;
 }
 .night__comments{
-  background-color: black;
+  
   padding: 20px;
   margin: 28px 0 40px 0;
- 
-  
 }
 
 .comments_lists{
@@ -274,16 +273,23 @@ a {
 }
 
 .comments_list{
-  list-style-type: square;
   padding-bottom: 5px;
 }
 
 .comment_user{
   font-size: 16px;
-  color: #999;
+
   text-decoration: underline;
 }
+.comment_set{
+  text-align: center;
+}
 
+.comment_content{
+  height: 150px;
+  width:300px;
+  border: 1px solid #000066
+}
 
 .user__card {
   display: flex;

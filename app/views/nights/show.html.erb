@@ -23,7 +23,7 @@
           <% end %>
           <% else %>
           <%= link_to night_likes_path(@night), method: :post do %>
-             🖤
+            いいねを押そう!!👉   🖤
             <%= "#{@night.likes.count}いいね" %>
           <% end %>
 
@@ -62,24 +62,29 @@
 
       
       <div class="night__comments">
+      <div class = "comment_set">
         <% if user_signed_in? %>
-        
+    
           <%= form_with model: [@night, Comment.new],local: true do |f|%>
             <div class="field">
-              <%= f.label :content, "コメント" %><br />
-              <%= f.text_field :content, id:"comment_content" %>
+              <%= f.label :content, "コメントフォーム" %><br />
+              <%= f.text_area :content, id:"comment_content", class: "comment_content"%>
             </div>
             <div class="actions">
-              <%= f.submit "送信する", class: :form__btn  %>
+              <%= f.submit "コメントする", class: :form__btn  %>
             </div>
           <% end %>
+          
         <% end %>
-        
+        </div>
         <ul class="comments_lists">
           <% @comments.each do |comment| %>
             <li class="comments_list">
-               <%= comment.content%>
-              <%= link_to "（#{comment.user.name}）", user_path(comment.user), class: :comment_user %>
+               <p>コメント者
+              <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %></p>
+        
+              <%= " ・#{comment.content}" %>
+              
             <% end %>
             </li>
         </ul>

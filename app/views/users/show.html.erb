@@ -11,7 +11,7 @@
         <%= "#{@user.name}の投稿"%>
       </h2>
       <div class="user__card">
-        <%= render partial: 'nights/night', collection: @nights %>
+        <%= render partial: 'nights/night', collection: @user.night %>
       </div>
     </div>
   </div>
