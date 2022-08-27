@@ -14,7 +14,7 @@
       <div class="night__image">
         <%= image_tag @night.image %>
          <div class = "heart">
-
+      <%if user_signed_in? %>
         <% if @night.liked_by?(current_user) %>
           <%= link_to  night_likes_path(@night), method: :delete do %>
             💓
@@ -26,7 +26,9 @@
             いいねを押そう!!👉   🖤
             <%= "#{@night.likes.count}いいね" %>
           <% end %>
-
+          <% end %>
+          <% else %>
+          <%= "#{@night.likes.count}いいね" %>
           <% end %>
         </div>
       </div>

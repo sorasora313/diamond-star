@@ -323,7 +323,9 @@ a {
   color: #e54747;
   margin-left: 20px;
   }
+  
 
+  
 /* タブレット対応 */
 @media (max-width: 1024px) {
   .inner {
