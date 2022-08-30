@@ -7,12 +7,13 @@
      
       <%if user_signed_in? && current_user.id == @night.user_id%>
         <div class="night__manage">
-          <%= link_to "編集する", edit_night_path(@night.id), class: :night__btn %>
-          <%= link_to "削除する", night_path(@night.id), method: :delete, class: :night__btn %>
+          <%= link_to "編集", edit_night_path(@night.id), class: :night__btn %>
+          <%= link_to "削除", night_path(@night.id), method: :delete, class: :night__btn %>
         </div>
       <% end %>
       <div class="night__image">
         <%= image_tag @night.image %>
+        
          <div class = "heart">
       <%if user_signed_in? %>
         <% if @night.liked_by?(current_user) %>
@@ -86,7 +87,12 @@
               <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %></p>
         
               <%= " ・#{comment.content}" %>
-              
+              <%if user_signed_in? && current_user.id == comment.user_id%>
+              <div class="night__manage">
+                
+                <%= link_to "削除", comment_path(comment.id) , method: :delete, class: :night__btn %>
+              </div>
+            <% end %>
             <% end %>
             </li>
         </ul>

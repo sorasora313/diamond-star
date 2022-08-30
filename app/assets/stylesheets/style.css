@@ -19,6 +19,7 @@ body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #ffff;
   background-image: url(star.jpg);
+  overflow-x: hidden;
 }
 
 li {
@@ -34,6 +35,7 @@ a {
   text-decoration: none;
   color: #ffff;
 }
+
 
 /* ヘッダー */
 
@@ -207,8 +209,9 @@ a {
 .night__btn{
   display: block;
   padding: 0.4em 1.6em;
-  font-size: 0.4em;
-  color: #ffff;
+  font-size: 0.2em;
+  color: black;
+  background-color: yellow;
   text-decoration: none;
   user-select: none;
   border: 1px #999 solid;
@@ -218,7 +221,7 @@ a {
 }
 .night__btn:hover{
   color: #fff;
-  background: #999;
+  background: red;
 }
 .user__wrapper{
   min-height: calc(100vh - 161px);
