@@ -88,7 +88,7 @@
         
               <%= " ・#{comment.content}" %>
               <%if user_signed_in? && current_user.id == comment.user_id%>
-              <div class="night__manage">
+              <div class="comment_destroy">
                 
                 <%= link_to "削除", comment_path(comment.id) , method: :delete, class: :night__btn %>
               </div>
