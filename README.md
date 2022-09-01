@@ -1,5 +1,36 @@
 # アプリケーション名
+diamond-star
+---
 
+# アプリケーション概要
+夜景の画像向けの、画像投稿アプリケーション
+---
+
+# URL
+https://diamond-star.herokuapp.com/
+---
+
+# テスト用アカウント
+* Basic認証ID: admin
+* Basic認証パスワード: 2222
+* メールアドレス: test1@test1
+* パスワード: r12345
+<br>
+
+# 利用方法
+
+## 画像投稿
+
+
+
+
+
+
+
+# 洗い出した要件
+[要件シート](https://docs.google.com/spreadsheets/d/16qZyRM6nZjU42bFhWkwgSE-efc9PKPqLDTcnyLd_7lE/edit#gid=982722306)
+
+# 洗い出した要件
 
 
 
