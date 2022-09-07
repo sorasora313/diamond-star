@@ -43,7 +43,7 @@ https://diamond-star.herokuapp.com/
 * GoogleマップのAPIを使用して撮影地もシェアできるようにする
 
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/4b9e86c91dd624e8a473422e7f07ce07.png)](https://gyazo.com/4b9e86c91dd624e8a473422e7f07ce07)
+[![Image from Gyazo](https://i.gyazo.com/eb1a755ca80ac4080d6fad8992e666e3.png)](https://gyazo.com/eb1a755ca80ac4080d6fad8992e666e3)
 
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/f555e105a0a238b8652dacf12351940e.png)](https://gyazo.com/f555e105a0a238b8652dacf12351940e)
