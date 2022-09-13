@@ -2,7 +2,7 @@
  <%= link_to  night.title, night_path(night.id),method: :get, class: :card__title%>
  <%= link_to  "#{night.user.name}の投稿", user_path(night.user),class: :card__user %>
 <%= link_to night_path(night.id),method: :get do %>
- <%= image_tag night.image, class: :card__img if night.image.attached? %>
+ <%= image_tag night.image.variant(resize: '500x500'), class: :card__img if night.image.attached? %>
  <% end %>
   
 <div class="card__body">
